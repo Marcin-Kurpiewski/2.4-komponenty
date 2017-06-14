@@ -1,0 +1,21 @@
+body{
+	text-align: center;
+}
+#app{
+	width:100%;
+	background-color: #919cad;
+	}
+#appOne{
+	width:100%;
+
+	background-color: #4286f4; 
+}
+
+	.movies_images{
+	width: 350px;
+	height: 350px;
+}
+li{
+	list-style-type: none;
+
+}
