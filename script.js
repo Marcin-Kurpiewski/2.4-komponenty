@@ -1,6 +1,6 @@
 var element= React.createElement("div", {} , "Hello World!");
 
-ReactDOM.render(element, document.getElementById('app'));
+// ReactDOM.render(element, document.getElementById('app'));
 
 var elementOne=
 React.createElement('div',{},
@@ -17,7 +17,7 @@ React.createElement('div',{},
 		)
 );
 
-ReactDOM.render(elementOne, document.getElementById('appOne'));
+// ReactDOM.render(elementOne, document.getElementById('appOne'));
 
 
 var movies = [
@@ -85,25 +85,29 @@ var elementTwo=
     React.createElement('ul', {}, moviesElements)
   );
 
-ReactDOM.render(elementTwo, document.getElementById('appTwo'));
+// ReactDOM.render(elementTwo, document.getElementById('appTwo'));
 
 
-// var Movie = React.createClass({
 
-// propTypes:{
-//   id: React.PropTypes.object.isRequired,
-// },
-//   render : function(){
 
-//     return(
-//       React.createElement('li', {key: movie.id},
-//       React.createElement('h2', {}, "Tytuł: " , this.props.movie.title),
-//       React.createElement('p', {}, "Krótki opis: ", this.proprs.movie.desc),
-//       React.createElement('img', {src: this.props.movie.images, className: 'movies_images'}, )
-//       )
-//   }
-// });
 
-//     var el = React.createElement(Movie, {movie:movies});
+var Movies= React.createClass({
 
-//     ReactDOM.render(el, document.getElementById('appFour'));
+propTypes:{
+  moviesX: React.PropTypes.object.isRequired,
+},
+  render: function(){
+    console.log(this.props);
+    return ( 
+      React.createElement('ul', {}, 
+      React.createElement('li', {},  this.props.moviesX.id)
+    )
+      )
+},
+});
+var moviesElements= movies.map(function(movie) {
+  return React.createElement(Movies, { moviesX: movie});
+});
+
+
+ReactDOM.render(moviesElements, document.getElementById('appFour'));
